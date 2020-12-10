@@ -23,13 +23,13 @@ describe('AppComponent', () => {
   it(`should have as title 'IPRWC'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('IPRWC');
+    expect(app.title).toEqual('IPRWC-Angular-Frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('IPRWC app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('IPRWC-Angular-Frontend app is running!');
   });
 });

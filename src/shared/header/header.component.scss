@@ -1,0 +1,40 @@
+header {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: whitesmoke;
+
+  .left-box {
+    display: inline-flex;
+
+  }
+
+  .right-box {
+    display: inline-flex;
+
+  }
+
+}
+
+a {
+  padding: 10px 20px;
+  color: black;
+  text-align: center;
+  font-weight: bolder;
+  text-decoration: none;
+  line-height: normal;
+}
+
+img {
+  margin: auto 10px;
+  width: 25px;
+  height: 25px;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #d9d9d9;
+}
