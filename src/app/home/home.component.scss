@@ -1,0 +1,49 @@
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+
+  img {
+    height: 25vw;
+    width: 37.5vw;
+    margin: auto;
+    border-radius: 7px;
+    transition: transform .2s;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+
+  .element {
+    display: inline-flex;
+    flex-direction: row;
+    height: 70vh;
+    justify-content: space-between;
+  }
+
+  .content-box {
+    background-color: #9ece6c;
+    border-radius: 7px;
+    height: 70%;
+    padding: 25px;
+    margin: auto;
+    width: 30%;
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  #second-box {
+    flex-direction: row-reverse;
+  }
+}
+
+
