@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ShoppingBasketComponent } from './shopping-basket.component';
 import { ShoppingBasketListComponent } from './shopping-basket-list/shopping-basket-list.component';
 import { ShoppingBasketItemComponent } from './shopping-basket-list/shopping-basket-item/shopping-basket-item.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const shoppingBasketRoutes: Routes = [
+  { path: 'shopping-basket', component: ShoppingBasketComponent }
+];
 
 @NgModule({
     declarations: [
@@ -14,7 +19,8 @@ import { ShoppingBasketItemComponent } from './shopping-basket-list/shopping-bas
         ShoppingBasketComponent
     ],
     imports: [
-        CommonModule
+      RouterModule.forChild(shoppingBasketRoutes),
+      CommonModule
     ]
 })
 export class ShoppingBasketModule { }

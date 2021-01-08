@@ -11,6 +11,13 @@ import { AppComponent } from './app.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'profile', component: UserinfoComponent }
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +33,8 @@ import { ContactComponent } from './contact/contact.component';
     OrderingModule,
     AuthModule,
     ProductsModule,
-    ShoppingBasketModule
+    ShoppingBasketModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

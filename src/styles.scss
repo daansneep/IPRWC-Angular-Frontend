@@ -4,6 +4,10 @@
   --primaryShadow: #9ece6c;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   background: linear-gradient(0.25turn, #ECF9EC, #B3D1B3, #ECF9EC);
 }
