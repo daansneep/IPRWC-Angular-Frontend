@@ -15,9 +15,10 @@ import {ProductComponent} from '../product/product.component';
         ProductItemComponent,
         ProductComponent
     ],
-    exports: [
-        ProductsComponent
-    ],
+  exports: [
+    ProductsComponent,
+    ProductComponent
+  ],
     imports: [
         CommonModule
     ]

@@ -4,8 +4,12 @@
   --primaryShadow: #9ece6c;
 }
 
+body {
+  background: linear-gradient(0.25turn, #ECF9EC, #B3D1B3, #ECF9EC);
+}
+
 * {
-  font-family: Lato, sans-serif;
+  font-family: Doppio One, sans-serif;
   margin: 0;
   padding: 0;
 }

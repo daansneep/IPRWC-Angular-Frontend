@@ -1,13 +1,5 @@
 .container {
-  display: flex;
-  flex-direction: row;
-}
-
-app-products-filter {
-  width: 25%;
-  padding-left: 5%;
-}
-
-app-products-list {
-  width: 75%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 100%;
 }

@@ -1,0 +1,28 @@
+.item-container {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px grey solid;
+  border-radius: 2px;
+  color: #005700;
+  height: 100px;
+  align-content: center;
+  padding: 10px;
+
+  img {
+
+  }
+
+  .text-container {
+
+  }
+
+  .amount-price {
+    display: flex;
+    flex-direction: row;
+
+    h3 {
+      margin: auto 5px;
+    }
+  }
+}

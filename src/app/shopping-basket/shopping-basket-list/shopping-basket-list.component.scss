@@ -1,0 +1,8 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+
+  app-shopping-basket-item {
+    margin-bottom: 5px;
+  }
+}

@@ -1,17 +1,7 @@
-.product-list {
+.products-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
-}
-
-@media only screen and  (max-width: 1500px) {
-  .product-list {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media only screen and  (max-width: 900px) {
-  .product-list {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  row-gap: 50px;
+  padding: 50px;
 }

@@ -1,40 +1,71 @@
-header {
-  display: inline-flex;
-  justify-content: space-between;
+html {
   width: 100%;
-  background-color: whitesmoke;
+  height: 100%;
+}
 
-  .left-box {
-    display: inline-flex;
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 75px;
+  width: 100%;
+  background: linear-gradient(0.25turn, #ECF9EC, #8FC88F, #ECF9EC);
+}
+
+.left {
+  margin: auto;
+  height: 100%;
+}
+
+.middle {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  div {
+    width: 254px;
+    text-align: center;
+    margin: auto 0;
+
+    p {
+      font-size: 1.6em;
+    }
+  }
+}
+
+.right {
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 254px;
+
+  button {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
 
   }
-
-  .right-box {
-    display: inline-flex;
-
-  }
-
 }
 
-a {
-  padding: 10px 20px;
-  color: black;
-  text-align: center;
-  font-weight: bolder;
-  text-decoration: none;
-  line-height: normal;
+.shopping-basket {
+  background-image: url("../../assets/images/shopping-basket.svg");
+  border: none;
 }
 
-img {
-  margin: auto 10px;
-  width: 25px;
-  height: 25px;
-}
+.profile {
+  background-image: url("../../assets/images/profilepic_placeholder-removebg-preview.png");
+  border: solid black 2px;
+  border-radius: 50%;
 
-img:hover {
-  cursor: pointer;
-}
-
-a:hover {
-  background-color: #d9d9d9;
 }
