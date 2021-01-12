@@ -1,13 +1,11 @@
 <div class="container">
   <img src="../../../../assets/images/rtx3080.jpg" alt="">
   <div class="content">
-    <h2>Producttitel</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Fusce sit amet lobortis velit. Aenean at tortor
-      et diam tempus blandit non in urna.</p>
+    <h3 *ngIf="product">{{ product.title }}</h3>
+    <p *ngIf="product">{{ product.description }}</p>
   </div>
   <div class="price-label">
-    <h3>Prijs</h3>
+    <h3 *ngIf="product">€{{ product.saleprice.toFixed(2) }}</h3>
     <button>Koop!</button>
   </div>
   <div class="backdrop"></div>

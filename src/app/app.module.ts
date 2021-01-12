@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from '../shared/shared.module';
-import { OrderingModule } from './ordering/ordering.module';
 import { AuthModule } from './auth/auth.module';
 import { ShoppingBasketModule } from './shopping-basket/shopping-basket.module';
 import { ProductsModule } from './products/products.module';
@@ -11,7 +10,8 @@ import { AppComponent } from './app.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,10 +30,10 @@ const appRoutes: Routes = [
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    OrderingModule,
     AuthModule,
     ProductsModule,
     ShoppingBasketModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

@@ -16,10 +16,21 @@
 
   .content {
     color: #005700;
+
+    h3:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    p {
+      color: #415b41;
+    }
   }
 
   .price-label {
     align-self: flex-end;
+    display: flex;
+    flex-direction: column;
 
     h3 {
       padding: 5px;
@@ -27,8 +38,9 @@
 
     button {
       width: 100%;
-      max-width: 100px;
+      max-width: 75px;
       background: #7DCF7D;
+      align-self: flex-end;
     }
   }
 }

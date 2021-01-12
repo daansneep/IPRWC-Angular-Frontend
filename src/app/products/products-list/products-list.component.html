@@ -1,8 +1,4 @@
 <div class="products-list">
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
-  <app-product-item></app-product-item>
+  <h3 class="category-browser">Alle Producten</h3>
+  <app-product-item [product]=product *ngFor="let product of products;"></app-product-item>
 </div>
