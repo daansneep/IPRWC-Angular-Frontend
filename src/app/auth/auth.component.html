@@ -1,38 +1,38 @@
 <div class="auth">
   <div class="login">
-    <form action="">
+    <form (ngSubmit)="onLogin(l)" #l="ngForm">
       <div class="pre-text">
         <h2>Log in</h2>
         <p>Heeft u al een account bij ons? Log dan hier in!</p>
       </div>
       <div class="form-container">
         <label for="emailLog">E-mail</label>
-        <input type="text" id="emailLog" name="email">
+        <input type="text" id="emailLog" name="email" ngModel required email>
         <label for="pwdLog">Wachtwoord</label>
-        <input type="password" id="pwdLog" name="password">
+        <input type="password" id="pwdLog" name="password" ngModel required>
       </div>
       <div class="elem-foot">
-        <button type="submit" id="login">Log in</button>
+        <button type="submit" [disabled]="!l.valid">Log in</button>
         <a href="">Wachtwoord vergeten?</a>
       </div>
     </form>
   </div>
   <div class="register">
-    <form action="">
+    <form (ngSubmit)="onRegister(r)" #r="ngForm">
       <div class="pre-text">
         <h2>Registreer</h2>
         <p>Heeft u nog geen account aangemaakt? Maak er hier dan een aan!</p>
       </div>
       <div class="form-container">
         <label for="emailReg">E-mail</label>
-        <input type="text" id="emailReg" name="emailReg">
+        <input type="text" id="emailReg" name="emailReg" ngModel required email>
         <label for="pwdReg">Wachtwoord</label>
-        <input type="password" id="pwdReg" name="pwdReg">
+        <input type="password" id="pwdReg" name="pwdReg" ngModel required>
         <label for="pwdRegConfirm">Wachtwoord herhalen</label>
-        <input type="password" id="pwdRegConfirm" name="pwdRegConfirm">
+        <input type="password" id="pwdRegConfirm" name="pwdRegConfirm" ngModel required>
       </div>
       <div class="elem-foot">
-        <button type="submit">Registreer</button>
+        <button type="submit" [disabled]="!r.valid">Registreer</button>
       </div>
     </form>
   </div>

@@ -13,6 +13,7 @@
   </div>
   <div class="right">
     <button class="shopping-basket" routerLink="/shopping-basket"></button>
-    <button class="profile" routerLink="/profile"></button>
+    <button *ngIf="!isLoggedIn" class="login" routerLink="/sign-in-or-up"></button>
+    <button *ngIf="isLoggedIn" class="profile" routerLink="/profile"></button>
   </div>
 </div>
