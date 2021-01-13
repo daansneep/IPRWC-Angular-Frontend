@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-shopping-basket-item',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-basket-item.component.scss']
 })
 export class ShoppingBasketItemComponent implements OnInit {
+  @Input() product!: Product;
+  @Input() amount!: number;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

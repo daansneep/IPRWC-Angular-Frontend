@@ -1,5 +1,6 @@
 <div class="list-container">
-  <app-shopping-basket-item></app-shopping-basket-item>
-  <app-shopping-basket-item></app-shopping-basket-item>
-  <app-shopping-basket-item></app-shopping-basket-item>
+  <app-shopping-basket-item
+    *ngFor="let item of shoppingCartList;"
+    [product]="item.product"
+    [amount]="item.amount"></app-shopping-basket-item>
 </div>

@@ -7,6 +7,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductItemComponent } from './products-list/product-item/product-item.component';
 import { ProductComponent } from './products-list/product-item/product/product.component';
 import {RouterModule, Routes} from '@angular/router';
+import {SharedModule} from '../../shared/shared.module';
 
 const webshopRoutes: Routes = [
   { path: 'webshop', component: ProductsComponent },
@@ -26,8 +27,9 @@ const webshopRoutes: Routes = [
     ProductComponent
   ],
     imports: [
-      RouterModule.forChild(webshopRoutes),
-      CommonModule
+        RouterModule.forChild(webshopRoutes),
+        CommonModule,
+        SharedModule
     ]
 })
 export class ProductsModule { }

@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Product} from '../../../models/product.model';
+import { Product } from '../../../models/product.model';
+import { Router } from '@angular/router';
+import {ShoppingCartService} from '../../../services/shopping-cart.service';
+import {UserService} from '../../../services/user.service';
 
 @Component({
   selector: 'app-product-item',
@@ -7,11 +10,39 @@ import {Product} from '../../../models/product.model';
   styleUrls: ['./product-item.component.scss']
 })
 export class ProductItemComponent implements OnInit {
-  @Input() product: Product | undefined;
+  @Input() product!: Product;
+  clickedBuyPopup = false;
+  isLoggedIn = false;
 
-  constructor() { }
+  constructor(private router: Router, private shoppingCartService: ShoppingCartService, private userService: UserService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onClicked(): void {
+    this.clickedBuyPopup = true;
+  }
+
+  closePopup(): void {
+    this.clickedBuyPopup = false;
+  }
+
+  closePopupAndAdd(): void {
+    this.clickedBuyPopup = false;
+    if (this.userService.user) {
+      this.shoppingCartService.addToCart(this.product);
+    } else {
+      this.router.navigate(['/sign-in-or-up']);
+    }
+  }
+
+  closePopupAndLeave(): void {
+    this.clickedBuyPopup = false;
+    if (this.userService.user) {
+      this.shoppingCartService.addToCart(this.product);
+      this.router.navigate(['/shopping-basket']);
+    } else {
+      this.router.navigate(['/sign-in-or-up']);
+    }
   }
 
 }

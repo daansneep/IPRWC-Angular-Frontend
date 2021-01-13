@@ -1,11 +1,13 @@
 <div class="item-container">
   <img src="" alt="">
   <div class="text-container">
-    <h2>Producttitel</h2>
-    <p>Productbeschrijving</p>
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.description }}</p>
   </div>
-  <div class="amount-price">
-    <h3>Aantal</h3>
-    <h3>Prijs</h3>
-  </div>
+    <div class="amount">
+      <img src="../../../../assets/icons/plus.png" alt="">
+      <h3>{{ amount }}</h3>
+      <img src="../../../../assets/icons/minus.ico" alt="">
+    </div>
+    <h3>€{{ product.saleprice.toFixed(2) }}</h3>
 </div>

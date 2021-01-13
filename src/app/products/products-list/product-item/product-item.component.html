@@ -6,7 +6,24 @@
   </div>
   <div class="price-label">
     <h3 *ngIf="product">€{{ product.saleprice.toFixed(2) }}</h3>
-    <button>Koop!</button>
+    <button (click)="onClicked()">Koop!</button>
   </div>
   <div class="backdrop"></div>
 </div>
+
+<app-popup
+  *ngIf="clickedBuyPopup && product"
+  title="{{ product.title }} toevoegen"
+  [isProduct]="true"
+  (closed)="closePopup()"
+  (savedAndClosed)="closePopupAndAdd()"
+  (savedAndWent)="closePopupAndLeave()">
+  <div class="popup-content">
+    <img src="../../../../assets/images/rtx3080.jpg" alt="">
+    <div class="content">
+      <p *ngIf="product">{{ product.description }}</p>
+      <br>
+      <h3 *ngIf="product">€{{ product.saleprice.toFixed(2) }}</h3>
+    </div>
+  </div>
+</app-popup>
