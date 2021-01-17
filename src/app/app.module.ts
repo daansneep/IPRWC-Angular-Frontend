@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,15 +25,16 @@ const appRoutes: Routes = [
     HomeComponent,
     ContactComponent
   ],
-  imports: [
-    BrowserModule,
-    SharedModule,
-    AuthModule,
-    ProductsModule,
-    ShoppingBasketModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    imports: [
+        BrowserModule,
+        SharedModule,
+        AuthModule,
+        ProductsModule,
+        ShoppingBasketModule,
+        HttpClientModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

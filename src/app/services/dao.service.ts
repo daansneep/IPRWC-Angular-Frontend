@@ -32,11 +32,17 @@ export class DaoService {
 
   private setToken(token: string | undefined): void {
     if (token) {
-      this.options.headers
-        .set('Authorization', `Bearer ${token}`);
+      this.options = {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token
+        })
+      };
     } else {
-      this.options.headers
-        .set('Authorization', '');
+      this.options = {
+        headers: new HttpHeaders({
+          Authorization: ''
+        })
+      };
     }
   }
 
