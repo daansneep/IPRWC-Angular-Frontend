@@ -12,7 +12,7 @@ export class ShoppingCartService {
   addToCart(product: Product): void {
     let productAdded = false;
     this.products.forEach((entry: { amount: number, product: Product}) => {
-      if (entry.product.id === product.id) {
+      if (entry.product.productnumber === product.productnumber) {
         entry.amount++;
         productAdded = true;
       }
