@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../services/user.service';
-import {User} from '../models/user.model';
+import { UserService } from '../../services/user.service';
+import {User} from '../../models/user.model';
 import {Router} from '@angular/router';
 
 @Component({
@@ -27,6 +27,10 @@ export class AuthComponent implements OnInit {
 
   onRegister(form: NgForm): void {
     this.userService.register(form.value.email, form.value.password);
+  }
+
+  adminPortal(): void {
+    this.router.navigate(['/sign-in-or-up/admin']);
   }
 
 }

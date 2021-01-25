@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { SharedModule } from '../shared/shared.module';
-import { AuthModule } from './auth/auth.module';
-import { ShoppingBasketModule } from './shopping-basket/shopping-basket.module';
-import { ProductsModule } from './products/products.module';
+import { SharedModule } from '../../shared/shared.module';
+import { AuthModule } from '../auth/auth.module';
+import { ShoppingBasketModule } from '../shopping-basket/shopping-basket.module';
+import { ProductsModule } from '../products/products.module';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UserinfoComponent } from './userinfo/userinfo.component';

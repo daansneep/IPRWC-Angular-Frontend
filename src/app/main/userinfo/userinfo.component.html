@@ -2,7 +2,7 @@
   <div class="content">
     <div class="left">
       <label for="email">E-mail</label>
-      <input type="text" id="email" name="email" ngModel required
+      <input type="text" id="email" name="email" ngModel required disabled
              [(ngModel)]="user.email">
       <label for="streetName">Straatnaam</label>
       <input type="text" id="streetName" name="streetName" ngModel required
@@ -26,7 +26,7 @@
   <div class="elem-foot">
     <div class="role">
       <label>Rol</label>
-      <p>Administrator</p>
+      <p>{{ user.isAdmin ? 'Administrator' : 'Gebruiker' }}</p>
     </div>
     <div class="button-container">
       <div class="column-aligner">

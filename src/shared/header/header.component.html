@@ -10,6 +10,9 @@
     <div class="contact" routerLink="/contact">
       <p>Contact</p>
     </div>
+    <div *ngIf="isAdmin && isLoggedIn" class="admin" routerLink="/admin">
+      <p>Adminpanel</p>
+    </div>
   </div>
   <div class="right">
     <button *ngIf="!isLoggedIn" class="shopping-basket" routerLink="/sign-in-or-up"></button>

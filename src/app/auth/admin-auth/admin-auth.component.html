@@ -1,0 +1,19 @@
+<div class="auth">
+  <div class="login">
+    <form (ngSubmit)="onLogin(l)" #l="ngForm">
+      <div class="pre-text">
+        <h2>Log in</h2>
+        <p>Heeft u al een account bij ons? Log dan hier in!</p>
+      </div>
+      <div class="form-container">
+        <label for="emailLog">E-mail</label>
+        <input type="text" id="emailLog" name="email" ngModel required email>
+        <label for="pwdLog">Wachtwoord</label>
+        <input type="password" id="pwdLog" name="password" ngModel required>
+      </div>
+      <div class="elem-foot">
+        <button type="submit" [disabled]="!l.valid">Log in</button>
+      </div>
+    </form>
+  </div>
+</div>
