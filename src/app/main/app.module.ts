@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {AdminModule} from '../admin/admin.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
         ProductsModule,
         ShoppingBasketModule,
         HttpClientModule,
+        AdminModule,
         RouterModule.forRoot(appRoutes),
         FormsModule
     ],
