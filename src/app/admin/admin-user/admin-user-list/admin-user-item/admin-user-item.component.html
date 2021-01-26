@@ -1,1 +1,10 @@
-<p>admin-user-item works!</p>
+<div class="user-wrapper">
+  <div class="user-box">
+    <h4 class="email" *ngIf="user">{{ user.email }}</h4>
+    <p class="isadmin" *ngIf="user && user.isadmin">Deze gebruiker is een admin</p>
+    <p class="isadmin" *ngIf="user && !user.isadmin">Dit is een klantaccount</p>
+  </div>
+  <div class="options">
+    <button class="remove" (click)="onDelete()">Verwijderen</button>
+  </div>
+</div>

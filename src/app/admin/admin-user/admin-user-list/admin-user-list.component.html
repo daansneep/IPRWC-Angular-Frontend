@@ -1,1 +1,6 @@
-<p>admin-user-list works!</p>
+<div class="user-list">
+  <app-admin-user-item
+    *ngFor="let user of users;"
+    [user]="user"
+    (deleted)="onDeleted($event)"></app-admin-user-item>
+</div>

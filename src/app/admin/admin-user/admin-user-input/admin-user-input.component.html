@@ -1,0 +1,21 @@
+<form (ngSubmit)="saveInput(f)" #f="ngForm">
+  <div class="register">
+    <h2>Register a new admin</h2>
+    <div class="email">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" ngModel required email>
+    </div>
+    <p *ngIf="passwordsNotEqual">De ingevoerde wachtwoorden zijn niet gelijk</p>
+    <div class="password">
+      <label for="password">Wachtwoord</label>
+      <input type="password" id="password" name="password" ngModel required>
+    </div>
+    <div class="passwordConfirm">
+      <label for="passwordConfirm">Wachtwoord herhalen</label>
+      <input type="password" id="passwordConfirm" name="passwordConfirm" ngModel required>
+    </div>
+  </div>
+  <div>
+    <button class="register" type="submit">Registreer</button>
+  </div>
+</form>

@@ -1,0 +1,27 @@
+.register {
+  h2 {
+    margin: 20px 0;
+  }
+
+  p {
+    color: red;
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+
+    input {
+      padding: 5px;
+      border: none;
+      border-radius: 10px;
+      width: 160px;
+    }
+  }
+}
+
+button {
+  background-color: #005700;
+}

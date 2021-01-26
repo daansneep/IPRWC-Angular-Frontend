@@ -43,11 +43,13 @@ export class AdminProductInputComponent implements OnInit {
     this.product.title = form.value.title;
     this.product.description = form.value.desc;
     this.product.imagepath = form.value.imgpath;
-    this.product.categorynumber = form.value.category;
+    if (form.value.category !== '') {
+      this.product.categorynumber = form.value.category;
+    }
     this.product.purchaseprice = form.value.purchaseprice;
     this.product.saleprice = form.value.saleprice;
     this.product.stock = form.value.stock;
-    console.log(form.value.stock);
+
     this.product.showinwebshop = form.value.showinwebshop;
     this.product.margin = (1 - (this.product.purchaseprice * 1.21 / this.product.saleprice)) * 100;
 
