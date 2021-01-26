@@ -1,1 +1,10 @@
-<p>admin-product-item works!</p>
+<div class="product-wrapper">
+  <div class="product-box">
+    <h3 class="title" *ngIf="product">{{ product.title }}</h3>
+    <p class="desc" *ngIf="product">{{ product.description }}</p>
+  </div>
+  <div class="options">
+    <button class="edit" (click)="onEdit()">Edit</button>
+    <button class="remove" (click)="onDelete()">Verwijderen</button>
+  </div>
+</div>

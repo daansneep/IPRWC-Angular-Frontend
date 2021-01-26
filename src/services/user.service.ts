@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { DaoService } from './dao.service';
 import { User } from '../models/user.model';
 import { Subject } from 'rxjs';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   userSubject = new Subject<User | undefined>();
+  errorSubject = new Subject<HttpErrorResponse | undefined>();
   user: User | undefined;
+  error: Error | undefined;
 
 
   constructor(private daoService: DaoService) {
@@ -26,6 +29,9 @@ export class UserService {
             this.userSubject.next(new User(res.email, res.token, res.isadmin, userData.postalcode, userData.streetname,
               userData.housenumber, userData.addition, userData.city));
           });
+      }, error => {
+        this.error = error;
+        this.errorSubject.next(error);
       });
   }
 
@@ -47,17 +53,13 @@ export class UserService {
 
   register(email: string, password: string): void {
     this.daoService.sendPostRequest('/auth/register', { email, password })
-      .subscribe(res => {
-        console.log(res);
-      });
+      .subscribe();
   }
 
   registerAdmin(email: string, password: string): void {
     if (this.user) {
       this.daoService.sendPostRequest('/auth/register/admin', { email, password }, )
-        .subscribe(res => {
-          console.log(res);
-        });
+        .subscribe();
     } else {
       throw new Error('Invalid operation, user is not logged in');
     }
@@ -69,8 +71,6 @@ export class UserService {
       token = this.user.token;
     }
     this.daoService.sendPostRequest('/profile/data', userinfo, token)
-      .subscribe(res => {
-        console.log(res);
-      });
+      .subscribe();
   }
 }

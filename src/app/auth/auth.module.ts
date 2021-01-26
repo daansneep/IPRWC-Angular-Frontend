@@ -4,6 +4,7 @@ import { AuthComponent } from './auth.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AdminAuthComponent } from './admin-auth/admin-auth.component';
+import {SharedModule} from '../../shared/shared.module';
 
 const authRoutes: Routes = [
   { path: 'sign-in-or-up', component: AuthComponent },
@@ -21,7 +22,8 @@ const authRoutes: Routes = [
     imports: [
         FormsModule,
         RouterModule.forChild(authRoutes),
-        CommonModule
+        CommonModule,
+        SharedModule
     ]
 })
 export class AuthModule { }

@@ -1,0 +1,21 @@
+.product-wrapper {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+  padding: 10px;
+
+  .options {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .edit {
+      background-color: #7DCF7D;
+    }
+
+    .remove {
+      background-color: #ff4f4a;
+    }
+  }
+}

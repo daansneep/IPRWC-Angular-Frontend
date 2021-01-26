@@ -18,16 +18,7 @@ export class DaoService {
   constructor(private http: HttpClient) { }
 
   private static handleError(errorRes: HttpErrorResponse): Observable<any> {
-    if (errorRes.status === 401) {
-      return throwError(`You're not authorized, please login`);
-    }
-    if (errorRes.status === 404) {
-      return throwError(`The address did not yield a resource on the server`);
-    }
-    if (errorRes.status >= 500) {
-      return throwError(`Server Error, server might be down`);
-    }
-    return throwError(`An unknown error occured with code ${errorRes.status}`);
+    return throwError(errorRes);
   }
 
   private setToken(token: string | undefined): void {

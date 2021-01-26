@@ -1,0 +1,46 @@
+<form (ngSubmit)="saveInput(f)" #f="ngForm">
+  <div class="product">
+    <div class="title">
+      <label for="title">Titel</label>
+      <input type="text" id="title" name="title" ngModel required [(ngModel)]="product.title">
+    </div>
+    <div class="desc">
+      <label for="desc">Beschrijving</label>
+      <textarea type="text" id="desc" name="desc" ngModel [(ngModel)]="product.description"></textarea>
+    </div>
+    <div class="img">
+      <label for="imgpath">Afbeeldingslink</label>
+      <input type="text" id="imgpath" name="imgpath" ngModel [(ngModel)]="product.imagepath">
+    </div>
+    <div class="category">
+      <label for="category">Categorie</label>
+      <select id="category" name="category" required ngModel>
+        <option *ngFor="let category of categories" [value]="category.categorynumber"
+                [selected]="category.categorynumber === product.categorynumber">
+          {{ category.categoryname }}
+        </option>
+      </select>
+    </div>
+    <div class="purchaseprice">
+      <label for="purchaseprice">Inkoopprijs</label>
+      <input type="number" id="purchaseprice" name="purchaseprice" required ngModel [(ngModel)]="product.purchaseprice">
+    </div>
+    <div class="saleprice">
+      <label for="saleprice">Verkoopprijs</label>
+      <input type="number" id="saleprice" name="saleprice" required ngModel [(ngModel)]="product.saleprice">
+    </div>
+    <div class="stock">
+      <label for="stock">Voorraad</label>
+      <input type="number" id="stock" name="stock" required ngModel [(ngModel)]="product.stock">
+    </div>
+    <div class="showinwebshop">
+      <label for="showinwebshop">In webshop tonen</label>
+      <input type="checkbox" id="showinwebshop" name="showinwebshop" ngModel [(ngModel)]="product.showinwebshop">
+    </div>
+  </div>
+  <app-property *ngFor="let property of properties"></app-property>
+  <div class="options">
+    <button class="save-or-create" type="submit">{{ editing ? 'Opslaan' : 'Aanmaken' }}</button>
+    <button class="back" *ngIf="editing" (click)="resetInput()">Terug</button>
+  </div>
+</form>

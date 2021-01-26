@@ -1,3 +1,9 @@
+.category-browser {
+  width: 100%;
+  padding: 20px 0;
+  margin: auto;
+  max-width: 500px;
+}
 
 .products-list {
   display: grid;
@@ -6,15 +12,5 @@
   row-gap: 50px;
   padding: 50px;
 
-  .category-browser {
-    grid-column-start: 1;
-    width: 100%;
-    padding: 5px;
-    margin: auto;
-    max-width: 500px;
-  }
 
-  app-product-item {
-    grid-row-start: 2;
-  }
 }

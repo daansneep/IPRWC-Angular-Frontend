@@ -6,6 +6,7 @@
         <p>Heeft u al een account bij ons? Log dan hier in!</p>
       </div>
       <div class="form-container">
+        <p *ngIf="invalidCredentials" class="errorText">Het email of wachtwoord is onjuist</p>
         <label for="emailLog">E-mail</label>
         <input type="text" id="emailLog" name="email" ngModel required email>
         <label for="pwdLog">Wachtwoord</label>
@@ -26,6 +27,7 @@
       <div class="form-container">
         <label for="emailReg">E-mail</label>
         <input type="text" id="emailReg" name="emailReg" ngModel required email>
+        <p *ngIf="nonMatchingPassword" class="errorText">De ingevoerde wachtwoorden zijn niet gelijk</p>
         <label for="pwdReg">Wachtwoord</label>
         <input type="password" id="pwdReg" name="pwdReg" ngModel required>
         <label for="pwdRegConfirm">Wachtwoord herhalen</label>
@@ -37,3 +39,13 @@
     </form>
   </div>
 </div>
+
+<app-popup
+  *ngIf="error"
+  title="Foutmelding in applicatie"
+  buttonText="Okay"
+  [isProduct]="false"
+  (savedAndWent)="closeError()">
+  <h2>{{ error.statusText }}</h2>
+  <p>{{ errorText }}</p>
+</app-popup>
