@@ -1,1 +1,10 @@
-<p>admin-category-item works!</p>
+<div class="category-wrapper">
+  <div class="category-box">
+    <h4 class="categoryname" *ngIf="category">{{ category.categoryname }}</h4>
+    <p class="isadmin" *ngIf="category && category.previouscategorynumber">Deze categorie is een subcategorie</p>
+  </div>
+  <div class="options">
+    <button class="edit" (click)="onEdit()">Edit</button>
+    <button class="remove" (click)="onDelete()">Verwijderen</button>
+  </div>
+</div>

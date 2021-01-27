@@ -54,4 +54,31 @@ export class ProductsService {
         this.categories.next(res.categories);
       });
   }
+
+  createCategory(category: Category): void {
+    if (this.userService.user) {
+      this.daoService.sendPostRequest('/webshop/category/create', category, this.userService.user.token)
+        .subscribe(() => {
+          this.getCategories();
+        });
+    }
+  }
+
+  updateCategory(category: Category): void {
+    if (this.userService.user) {
+      this.daoService.sendPutRequest('/webshop/category/update', category, this.userService.user.token)
+        .subscribe(() => {
+          this.getCategories();
+        });
+    }
+  }
+
+  deleteCategory(id: number): void {
+    if (this.userService.user) {
+      this.daoService.sendDeleteRequest(`/webshop/category/delete/${id}`, this.userService.user.token)
+        .subscribe(() => {
+          this.getCategories();
+        });
+    }
+  }
 }

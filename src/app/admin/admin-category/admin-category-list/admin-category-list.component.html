@@ -1,1 +1,8 @@
-<p>admin-category-list works!</p>
+<div class="category-list">
+  <app-admin-category-item
+    *ngFor="let category of categories;"
+    [category]="category"
+    (edit)="onEdit($event)"
+    (deleted)="onDeleted($event)"></app-admin-category-item>
+</div>
+

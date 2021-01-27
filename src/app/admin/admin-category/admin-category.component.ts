@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Category} from '../../../models/category.model';
+import {AdminCategoryInputComponent} from './admin-category-input/admin-category-input.component';
 
 @Component({
   selector: 'app-admin-category',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCategoryComponent implements OnInit {
 
+  @ViewChild(AdminCategoryInputComponent) categoryInput: AdminCategoryInputComponent | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onEdit(event: Category): void {
+    if (this.categoryInput) {
+      this.categoryInput.category = event;
+      this.categoryInput.editing = true;
+    }
   }
 
 }

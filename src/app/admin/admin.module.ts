@@ -16,6 +16,7 @@ import { AdminProductInputComponent } from './admin-product/admin-product-input/
 import { PropertyComponent } from './admin-product/admin-product-input/property/property.component';
 import {FormsModule} from '@angular/forms';
 import { AdminUserInputComponent } from './admin-user/admin-user-input/admin-user-input.component';
+import { AdminCategoryInputComponent } from './admin-category/admin-category-input/admin-category-input.component';
 
 const adminRoutes: Routes = [
   { path: 'admin', component: AdminComponent, children: [
@@ -42,7 +43,8 @@ const adminRoutes: Routes = [
     AdminUserItemComponent,
     AdminProductInputComponent,
     PropertyComponent,
-    AdminUserInputComponent
+    AdminUserInputComponent,
+    AdminCategoryInputComponent
   ],
   exports: [
     AdminComponent,

@@ -1,0 +1,21 @@
+<form (ngSubmit)="saveInput(f)" #f="ngForm">
+  <div class="category">
+    <div class="name">
+      <label for="name">Naam</label>
+      <input type="text" id="name" name="name" ngModel required [(ngModel)]="category.categoryname">
+    </div>
+    <div class="previouscategory">
+      <label for="previouscategory">Voorafgaande categorie</label>
+      <select id="previouscategory" name="previouscategory" required ngModel>
+        <option *ngFor="let supercategory of categories" [value]="supercategory.categorynumber"
+                [selected]="supercategory.categorynumber === category.previouscategorynumber">
+          {{ supercategory.categoryname }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="options">
+    <button class="save-or-create" type="submit">{{ editing ? 'Opslaan' : 'Aanmaken' }}</button>
+    <button class="back" *ngIf="editing" (click)="resetInput()">Terug</button>
+  </div>
+</form>
