@@ -1,0 +1,4 @@
+<div class="filter-item">
+  <p (click)="setCurrentCategory()">{{ category.categoryname }}</p>
+  <app-filter-item *ngFor="let subCategory of subCategories" [category]="subCategory"></app-filter-item>
+</div>

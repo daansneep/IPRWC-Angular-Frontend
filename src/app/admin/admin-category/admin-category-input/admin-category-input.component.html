@@ -16,6 +16,6 @@
   </div>
   <div class="options">
     <button class="save-or-create" type="submit">{{ editing ? 'Opslaan' : 'Aanmaken' }}</button>
-    <button class="back" *ngIf="editing" (click)="resetInput()">Terug</button>
+    <button class="back" type="button" *ngIf="editing" (click)="resetInput()">Terug</button>
   </div>
 </form>

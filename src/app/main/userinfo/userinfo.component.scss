@@ -68,6 +68,14 @@ form {
       }
     }
 
+    .logout {
+      align-self: flex-end;
+
+      button {
+        background-color: #ff4f4a;
+      }
+    }
+
     .button-container {
       width: 50%;
       align-self: flex-end;

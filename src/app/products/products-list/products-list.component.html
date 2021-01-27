@@ -1,4 +1,7 @@
-<h3 class="category-browser">Alle Producten</h3>
+<div class="category-browser">
+  <h3 *ngFor="let category of orderedSuperList; let i = index;">{{ category.categoryname }} &nbsp;&nbsp;>&nbsp;&nbsp;</h3>
+  <h3 *ngIf="orderedSuperList.length === 0">Alle Producten</h3>
+</div>
 <div class="products-list">
   <app-product-item [product]=product *ngFor="let product of products;"></app-product-item>
 </div>

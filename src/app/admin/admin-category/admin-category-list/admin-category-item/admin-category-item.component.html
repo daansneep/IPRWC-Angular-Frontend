@@ -3,7 +3,7 @@
     <h4 class="categoryname" *ngIf="category">{{ category.categoryname }}</h4>
     <p class="isadmin" *ngIf="category && category.previouscategorynumber">Deze categorie is een subcategorie</p>
   </div>
-  <div class="options">
+  <div class="options" *ngIf="category.previouscategorynumber !== null">
     <button class="edit" (click)="onEdit()">Edit</button>
     <button class="remove" (click)="onDelete()">Verwijderen</button>
   </div>

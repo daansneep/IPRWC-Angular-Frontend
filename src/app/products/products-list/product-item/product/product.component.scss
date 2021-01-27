@@ -45,3 +45,27 @@
   }
 }
 
+app-popup {
+  .popup-content {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      max-width: 200px;
+      object-fit: contain;
+      margin: 20px;
+    }
+
+    .content {
+      color: #005700;
+
+      p {
+        color: #415b41;
+      }
+
+      h3 {
+        justify-self: flex-end;
+      }
+    }
+  }
+}

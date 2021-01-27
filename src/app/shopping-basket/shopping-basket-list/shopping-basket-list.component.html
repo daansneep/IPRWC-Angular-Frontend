@@ -3,4 +3,5 @@
     *ngFor="let item of shoppingCartList;"
     [product]="item.product"
     [amount]="item.amount"></app-shopping-basket-item>
+  <h3 *ngIf="shoppingCartList.length < 1">Er is niets in het winkelmandje!</h3>
 </div>

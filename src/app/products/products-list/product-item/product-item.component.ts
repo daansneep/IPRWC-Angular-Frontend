@@ -19,6 +19,10 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {}
 
   onClicked(): void {
+    this.router.navigate([`/webshop/product/${this.product.productnumber}`]);
+  }
+
+  onAddToCart(): void {
     this.clickedBuyPopup = true;
   }
 

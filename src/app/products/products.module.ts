@@ -8,6 +8,7 @@ import { ProductItemComponent } from './products-list/product-item/product-item.
 import { ProductComponent } from './products-list/product-item/product/product.component';
 import {RouterModule, Routes} from '@angular/router';
 import {SharedModule} from '../../shared/shared.module';
+import { FilterItemComponent } from './products-filter/filter-item/filter-item.component';
 
 const webshopRoutes: Routes = [
   { path: 'webshop', component: ProductsComponent },
@@ -20,7 +21,8 @@ const webshopRoutes: Routes = [
         ProductsFilterComponent,
         ProductsListComponent,
         ProductItemComponent,
-        ProductComponent
+        ProductComponent,
+        FilterItemComponent
     ],
   exports: [
     ProductsComponent,

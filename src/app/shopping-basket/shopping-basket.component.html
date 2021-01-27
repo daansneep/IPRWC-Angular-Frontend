@@ -1,7 +1,12 @@
 <div class="container">
   <app-shopping-basket-list></app-shopping-basket-list>
   <div class="footer">
-    <p>Totaalprijs</p>
-    <button>Afrekenen</button>
+    <div class="left">
+      <button (click)="onEmpty()">Leegmaken</button>
+    </div>
+    <div class="right">
+      <p>Totaalprijs: €{{ totalPrice.toFixed(2) }}</p>
+      <button>Afrekenen</button>
+    </div>
   </div>
 </div>

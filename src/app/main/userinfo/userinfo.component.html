@@ -28,6 +28,9 @@
       <label>Rol</label>
       <p>{{ user.isAdmin ? 'Administrator' : 'Gebruiker' }}</p>
     </div>
+    <div class="logout">
+      <button (click)="logOut()">Uitloggen</button>
+    </div>
     <div class="button-container">
       <div class="column-aligner">
         <button type="submit">Opslaan</button>

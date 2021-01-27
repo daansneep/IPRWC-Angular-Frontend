@@ -26,16 +26,12 @@ export class AdminCategoryInputComponent implements OnInit {
   }
 
   saveInput(form: NgForm): void {
-    console.log(this.category);
-    console.log(form.value);
-    this.editing = false;
     this.category.categoryname = form.value.name;
     if (form.value.previouscategory > 0) {
       this.category.previouscategorynumber = form.value.previouscategory;
     } else if (this.category.previouscategorynumber < 0) {
       this.category.previouscategorynumber = 1;
     }
-
 
     if (this.category.categorynumber > 0) {
       this.productsService.updateCategory(this.category);
@@ -46,6 +42,7 @@ export class AdminCategoryInputComponent implements OnInit {
   }
 
   resetInput(): void {
+    this.editing = false;
     this.category = {categorynumber: -1, categoryname: '', previouscategorynumber: -1};
   }
 

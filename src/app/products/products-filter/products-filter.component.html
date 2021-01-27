@@ -1,14 +1,5 @@
 <div class="container">
-  <h2>Product Filter</h2>
-  <p>Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered
-    Hier kunnen producten worden gefiltered</p>
+  <h2>Product categorieën</h2>
+  <p class="root" (click)="setCurrentCategory()">Alle producten</p>
+  <app-filter-item *ngFor="let subCategory of subCategories;" [category]="subCategory"></app-filter-item>
 </div>

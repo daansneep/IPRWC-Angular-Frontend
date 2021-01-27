@@ -34,12 +34,12 @@ export class AdminProductInputComponent implements OnInit {
   }
 
   resetInput(): void {
+    this.editing = false;
     this.product = { productnumber: -1, title: '', description: '', imagepath: '', categorynumber: -1, purchaseprice: 0,
       saleprice: 0, stock: 0, margin: 0, showinwebshop: false };
   }
 
   saveInput(form: NgForm): void {
-    this.editing = false;
     this.product.title = form.value.title;
     this.product.description = form.value.desc;
     this.product.imagepath = form.value.imgpath;

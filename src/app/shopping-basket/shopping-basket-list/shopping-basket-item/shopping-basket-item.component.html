@@ -5,9 +5,9 @@
     <p>{{ product.description }}</p>
   </div>
     <div class="amount">
-      <img src="../../../../assets/icons/plus.png" alt="">
+      <img src="../../../../assets/icons/plus.png" alt="" (click)="onAdd()">
       <h3>{{ amount }}</h3>
-      <img src="../../../../assets/icons/minus.ico" alt="">
+      <img src="../../../../assets/icons/minus.ico" alt="" (click)="onRemove()">
     </div>
     <h3>€{{ product.saleprice.toFixed(2) }}</h3>
 </div>

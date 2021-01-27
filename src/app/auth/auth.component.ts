@@ -49,6 +49,7 @@ export class AuthComponent implements OnInit {
     this.nonMatchingPassword = false;
     if (form.value.pwdReg === form.value.pwdRegConfirm) {
       this.userService.register(form.value.emailReg, form.value.pwdReg);
+      this.router.navigate(['/']);
     }
     else {
       this.nonMatchingPassword = true;

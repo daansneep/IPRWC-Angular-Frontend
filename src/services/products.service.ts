@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DaoService } from './dao.service';
 import { Product } from '../models/product.model';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Category} from '../models/category.model';
 import {UserService} from './user.service';
 
@@ -11,14 +11,27 @@ import {UserService} from './user.service';
 export class ProductsService {
   products = new Subject<Product[]>();
   categories = new Subject<Category[]>();
+  categoryArray: Category[] = [];
+  currentCategory = new Subject<Category>();
 
-  constructor(private daoService: DaoService, private userService: UserService) { }
+  constructor(private daoService: DaoService, private userService: UserService) {
+    this.categories.subscribe(categories => {
+      this.categoryArray = [];
+      categories.forEach(category => {
+        this.categoryArray.push(category);
+      });
+    });
+  }
 
   getProducts(): void {
     this.daoService.sendGetRequest('/webshop/products')
       .subscribe(res => {
         this.products.next(res.products);
       });
+  }
+
+  getProductById(id: number): Observable<Product> {
+    return this.daoService.sendGetRequest(`/webshop/product/${id}`);
   }
 
   createProduct(product: Product): void {

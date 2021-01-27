@@ -1,14 +1,29 @@
 <div class="container">
   <img src="../../../../../assets/images/rtx3080.jpg" alt="">
   <div class="content">
-    <h2>Producttitel</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Fusce sit amet lobortis velit. Aenean at tortor
-      et diam tempus blandit non in urna.</p>
+    <h2 *ngIf="product">{{ product.title }}</h2>
+    <p *ngIf="product">{{ product.description }}</p>
     <div class="price-label">
-      <button>Koop!</button>
-      <h3>Prijs</h3>
+      <button (click)="onAddToCart()">Koop!</button>
+      <h3 *ngIf="product">€{{ product.saleprice.toFixed(2) }}</h3>
     </div>
   </div>
   <div class="backdrop"></div>
 </div>
+
+<app-popup
+  *ngIf="clickedBuyPopup && product"
+  title="{{ product.title }} toevoegen"
+  [isProduct]="true"
+  (closed)="closePopup()"
+  (savedAndClosed)="closePopupAndAdd()"
+  (savedAndWent)="closePopupAndLeave()">
+  <div class="popup-content">
+    <img src="../../../../../assets/images/rtx3080.jpg" alt="">
+    <div class="content">
+      <p *ngIf="product">{{ product.description }}</p>
+      <br>
+      <h3 *ngIf="product">€{{ product.saleprice.toFixed(2) }}</h3>
+    </div>
+  </div>
+</app-popup>

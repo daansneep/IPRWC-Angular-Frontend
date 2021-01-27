@@ -8,11 +8,15 @@ import { Product } from '../../../models/product.model';
   styleUrls: ['./shopping-basket-list.component.scss']
 })
 export class ShoppingBasketListComponent implements OnInit {
-  shoppingCartList!: {amount: number, product: Product}[];
+  shoppingCartList: {amount: number, product: Product}[] = [];
 
   constructor(private shoppingCartService: ShoppingCartService) {}
 
   ngOnInit(): void {
+    this.shoppingCartList = this.shoppingCartService.products;
+  }
+
+  onEmptied(): void {
     this.shoppingCartList = this.shoppingCartService.products;
   }
 
