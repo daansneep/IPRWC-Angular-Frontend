@@ -7,6 +7,11 @@ html {
   box-sizing: border-box;
 }
 
+.burger {
+  background: linear-gradient(0.25turn, #ECF9EC, #8FC88F, #ECF9EC);
+  display: none;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -81,4 +86,29 @@ html {
 
 .login {
   background-image: url("../../assets/icons/login.png");
+}
+
+@media only screen and (max-width: 1350px) {
+  .header {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .middle {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+      height: 50px;
+    }
+  }
 }

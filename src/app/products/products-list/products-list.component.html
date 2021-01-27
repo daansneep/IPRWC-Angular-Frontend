@@ -4,4 +4,5 @@
 </div>
 <div class="products-list">
   <app-product-item [product]=product *ngFor="let product of products;"></app-product-item>
+  <h2 *ngIf="products.length < 1">Er zijn geen producten beschikbaar!</h2>
 </div>

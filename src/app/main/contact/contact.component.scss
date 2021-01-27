@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 627px;
+  max-width: 630px;
   background-color: #00728A;
   border-radius: 30px;
   margin: 20px auto;
@@ -39,3 +39,10 @@
   }
 }
 
+@media only screen and (max-width: 630px) {
+  .container {
+    border: none;
+    border-radius: 0;
+    margin: auto;
+  }
+}

@@ -11,7 +11,7 @@
     border-radius: 15px;
     height: 100%;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     padding: 20px;
     align-self: center;
     display: flex;
@@ -67,6 +67,16 @@
         width: 100px;
         background-color: #7DCF7D;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .auth {
+    padding: 0;
+
+    .login {
+      border-radius: 0;
     }
   }
 }

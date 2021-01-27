@@ -16,6 +16,7 @@ export class AuthComponent implements OnInit {
   errorText = '';
   invalidCredentials = false;
   nonMatchingPassword = false;
+  passwordNotValid = false;
 
   constructor(private router: Router, private userService: UserService) { }
 
@@ -44,10 +45,13 @@ export class AuthComponent implements OnInit {
     });
     this.userService.login(form.value.email, form.value.password);
   }
-
   onRegister(form: NgForm): void {
+    this.passwordNotValid = false;
     this.nonMatchingPassword = false;
-    if (form.value.pwdReg === form.value.pwdRegConfirm) {
+    if (((form.value.pwdReg.length < 10) || !(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(form.value.pwdReg)) ||
+      !(/\d/.test(form.value.pwdReg)))) {
+      this.passwordNotValid = true;
+    } else if (form.value.pwdReg === form.value.pwdRegConfirm) {
       this.userService.register(form.value.emailReg, form.value.pwdReg);
       this.router.navigate(['/']);
     }

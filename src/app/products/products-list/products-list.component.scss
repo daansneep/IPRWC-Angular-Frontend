@@ -1,6 +1,7 @@
 .category-browser {
+  box-sizing: border-box;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   margin: auto;
   max-width: 1150px;
 
@@ -10,10 +11,17 @@
 }
 
 .products-list {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-around;
   row-gap: 50px;
   padding: 50px;
 
+}
+
+@media only screen and (max-width: 1550px) {
+  .products-list {
+    grid-template-columns: 1fr;
+  }
 }

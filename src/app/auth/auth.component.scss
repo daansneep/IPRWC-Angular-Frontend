@@ -85,3 +85,16 @@
   width: 80%;
   margin: 5px auto;
 }
+
+@media only screen and (max-width: 850px) {
+  .auth {
+    padding: 0;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    .login, .register {
+      border-radius: 0;
+      border: none;
+    }
+  }
+}
