@@ -4,6 +4,7 @@ import { ShoppingBasketComponent } from './shopping-basket.component';
 import { ShoppingBasketListComponent } from './shopping-basket-list/shopping-basket-list.component';
 import { ShoppingBasketItemComponent } from './shopping-basket-list/shopping-basket-item/shopping-basket-item.component';
 import {RouterModule, Routes} from '@angular/router';
+import {SharedModule} from '../../shared/shared.module';
 
 const shoppingBasketRoutes: Routes = [
   { path: 'shopping-basket', component: ShoppingBasketComponent }
@@ -19,8 +20,9 @@ const shoppingBasketRoutes: Routes = [
         ShoppingBasketComponent
     ],
     imports: [
-      RouterModule.forChild(shoppingBasketRoutes),
-      CommonModule
+        RouterModule.forChild(shoppingBasketRoutes),
+        CommonModule,
+        SharedModule
     ]
 })
 export class ShoppingBasketModule { }

@@ -6,7 +6,17 @@
     </div>
     <div class="right">
       <p>Totaalprijs: €{{ totalPrice.toFixed(2) }}</p>
-      <button>Afrekenen</button>
+      <button (click)="teapot()">Afrekenen</button>
     </div>
   </div>
 </div>
+
+<app-popup
+  *ngIf="userClearingShoppingBasket"
+  title="Winkelmandje legen"
+  buttonText="Doorgaan"
+  [buttons]="[true, false, true]"
+  (closed)="close()"
+  (savedAndWent)="closeConfirmation()">
+  <p>U staat op het punt om uw winkelmandje te legen, wilt u doorgaan?</p>
+</app-popup>

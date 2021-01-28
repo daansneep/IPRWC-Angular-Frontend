@@ -47,8 +47,17 @@
   *ngIf="error"
   title="Foutmelding in applicatie"
   buttonText="Okay"
-  [isProduct]="false"
+  [buttons]="[false, false, true]"
   (savedAndWent)="closeError()">
   <h2>{{ error.statusText }}</h2>
   <p>{{ errorText }}</p>
+</app-popup>
+
+<app-popup
+  *ngIf="registered"
+  title="Registreren"
+  buttonText="Doorgaan"
+  [buttons]="[false, false, true]"
+  (savedAndWent)="close()">
+  <p>Uw account is geregistreerd, u bent tevens ingelogd. U gaat nu naar de homepagina</p>
 </app-popup>

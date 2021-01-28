@@ -8,3 +8,13 @@
     <button class="edit" (click)="onEdit()">Edit</button>
   </div>
 </div>
+
+<app-popup
+  *ngIf="deleting"
+  title="categorie verwijderen"
+  buttonText="Doorgaan"
+  [buttons]="[true, false, true]"
+  (closed)="close()"
+  (savedAndWent)="closeConfirmation()">
+  <p>U staat op het punt om een categorie te verwijderen. Wilt u doorgaan?</p>
+</app-popup>

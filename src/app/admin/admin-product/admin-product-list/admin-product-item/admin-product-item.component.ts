@@ -10,6 +10,7 @@ export class AdminProductItemComponent implements OnInit {
   @Input() product: Product | undefined;
   @Output() edit = new EventEmitter<Product>();
   @Output() deleted = new EventEmitter<number>();
+  deleting = false;
 
   constructor() { }
 
@@ -21,8 +22,17 @@ export class AdminProductItemComponent implements OnInit {
   }
 
   onDelete(): void {
+    this.deleting = true;
+  }
+
+  close(): void {
+    this.deleting = false;
+  }
+
+  closeConfirmation(): void {
     if (this.product) {
       this.deleted.emit(this.product.productnumber);
     }
+    this.deleting = false;
   }
 }

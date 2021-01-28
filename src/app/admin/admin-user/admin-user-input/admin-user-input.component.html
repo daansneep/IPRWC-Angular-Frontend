@@ -5,7 +5,8 @@
       <label for="email">Email</label>
       <input type="text" id="email" name="email" ngModel required email>
     </div>
-    <p *ngIf="passwordsNotEqual">De ingevoerde wachtwoorden zijn niet gelijk</p>
+    <p class="errorText" *ngIf="passwordsNotEqual">De ingevoerde wachtwoorden zijn niet gelijk</p>
+    <p class="errorText" *ngIf="passwordNotValid">Dit wachtwoord voldoet niet aan de eisen</p>
     <div class="password">
       <label for="password">Wachtwoord</label>
       <input type="password" id="password" name="password" ngModel required>
@@ -14,6 +15,8 @@
       <label for="passwordConfirm">Wachtwoord herhalen</label>
       <input type="password" id="passwordConfirm" name="passwordConfirm" ngModel required>
     </div>
+    <p>Let op: een wachtwoord moet minimaal 10 tekens zijn. Tevens moet het minimaal 1 cijfer en 1 leesteken
+      bevatten.</p>
   </div>
   <div>
     <button class="register" type="submit">Registreer</button>

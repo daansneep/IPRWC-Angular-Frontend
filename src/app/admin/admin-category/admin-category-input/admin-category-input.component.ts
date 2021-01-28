@@ -11,6 +11,7 @@ import {ProductsService} from '../../../../services/products.service';
 export class AdminCategoryInputComponent implements OnInit {
   category: Category = {categorynumber: -1, categoryname: '', previouscategorynumber: -1};
   categories: Category[] = [];
+  supercategories: Category[] = [];
   editing = false;
 
   constructor(private productsService: ProductsService) { }
@@ -18,8 +19,12 @@ export class AdminCategoryInputComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.categories.subscribe(categories => {
       this.categories = [];
+      this.supercategories = [];
       categories.forEach(category => {
-        this.categories.push(category);
+        if (category.categorynumber !== this.category.previouscategorynumber) {
+          this.categories.push(category);
+          this.supercategories.push(category);
+        }
       });
     });
     this.productsService.getCategories();

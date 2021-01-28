@@ -19,6 +19,10 @@ export class AdminCategoryComponent implements OnInit {
   onEdit(event: Category): void {
     if (this.categoryInput) {
       this.categoryInput.category = event;
+      this.categoryInput.supercategories = [];
+      this.categoryInput.supercategories = this.categoryInput.categories.filter(category => {
+        return category.categorynumber !== event.categorynumber;
+      });
       this.categoryInput.editing = true;
     }
   }

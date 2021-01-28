@@ -14,7 +14,7 @@
 <app-popup
   *ngIf="clickedBuyPopup && product"
   title="{{ product.title }} toevoegen"
-  [isProduct]="true"
+  [buttons]="[true, true, true]"
   (closed)="closePopup()"
   (savedAndClosed)="closePopupAndAdd()"
   (savedAndWent)="closePopupAndLeave()">

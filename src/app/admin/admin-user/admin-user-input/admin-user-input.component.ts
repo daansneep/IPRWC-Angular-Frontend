@@ -8,6 +8,7 @@ import { UserService } from '../../../../services/user.service';
   styleUrls: ['./admin-user-input.component.scss']
 })
 export class AdminUserInputComponent implements OnInit {
+  passwordNotValid = false;
   passwordsNotEqual = false;
 
   constructor(private userService: UserService) { }
@@ -17,11 +18,14 @@ export class AdminUserInputComponent implements OnInit {
 
   saveInput(form: NgForm): void {
     this.passwordsNotEqual = false;
-    if (form.value.password === form.value.passwordConfirm) {
+    this.passwordNotValid = false;
+    if (((form.value.password.length < 10) || !(/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(form.value.password)) ||
+      !(/\d/.test(form.value.password)))) {
+      this.passwordNotValid = true;
+    } else if (form.value.password === form.value.passwordConfirm) {
       this.userService.registerAdmin(form.value.email, form.value.password);
     } else {
       this.passwordsNotEqual = true;
     }
   }
-
 }

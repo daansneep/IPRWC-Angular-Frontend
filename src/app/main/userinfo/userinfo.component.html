@@ -29,7 +29,7 @@
       <p>{{ user.isAdmin ? 'Administrator' : 'Gebruiker' }}</p>
     </div>
     <div class="logout">
-      <button (click)="logOut()">Uitloggen</button>
+      <button type="button" (click)="logOut()">Uitloggen</button>
     </div>
     <div class="button-container">
       <div class="column-aligner">
@@ -38,3 +38,22 @@
     </div>
   </div>
 </form>
+
+<app-popup
+  *ngIf="userDataSaved"
+  title="Gebruikersgegevens aangepast"
+  buttonText="Doorgaan"
+  [buttons]="[false, false, true]"
+  (savedAndWent)="closeConfirmation()">
+  <p>De veranderingen op uw gebruikersgegevens zijn toegepast</p>
+</app-popup>
+
+<app-popup
+  *ngIf="userLoggingOut"
+  title="Uitloggen"
+  buttonText="Doorgaan"
+  [buttons]="[true, false, true]"
+  (closed)="closeAndGoBack()"
+  (savedAndWent)="closeAndLogout()">
+  <p>U wordt nu uitgelogd, wilt u doorgaan?</p>
+</app-popup>

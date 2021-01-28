@@ -7,7 +7,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
   @Input() title = 'Product toevoegen';
-  @Input() isProduct = false;
+  @Input() buttons = [false, false, false];
   @Input() backText = 'Toevoegen en verder winkelen';
   @Input() buttonText = 'Toevoegen en afrekenen';
   @Output() closed = new EventEmitter<void>();

@@ -7,7 +7,7 @@
     <div class="previouscategory">
       <label for="previouscategory">Voorafgaande categorie</label>
       <select id="previouscategory" name="previouscategory" required ngModel>
-        <option *ngFor="let supercategory of categories" [value]="supercategory.categorynumber"
+        <option *ngFor="let supercategory of supercategories" [value]="supercategory.categorynumber"
                 [selected]="supercategory.categorynumber === category.previouscategorynumber">
           {{ supercategory.categoryname }}
         </option>

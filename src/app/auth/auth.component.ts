@@ -11,6 +11,7 @@ import {HttpErrorResponse} from '@angular/common/http';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  registered = false;
   user: User | undefined;
   error: HttpErrorResponse | undefined;
   errorText = '';
@@ -52,8 +53,8 @@ export class AuthComponent implements OnInit {
       !(/\d/.test(form.value.pwdReg)))) {
       this.passwordNotValid = true;
     } else if (form.value.pwdReg === form.value.pwdRegConfirm) {
-      this.userService.register(form.value.emailReg, form.value.pwdReg);
-      this.router.navigate(['/']);
+      this.userService.register(form.value.emailReg.toLowerCase(), form.value.pwdReg);
+      this.registered = true;
     }
     else {
       this.nonMatchingPassword = true;
@@ -66,5 +67,10 @@ export class AuthComponent implements OnInit {
 
   closeError(): void {
     this.error = undefined;
+  }
+
+  close(): void {
+    this.registered = false;
+    this.router.navigate(['/']);
   }
 }

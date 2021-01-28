@@ -9,6 +9,7 @@ import {Usermeta} from '../../../../../models/usermeta.model';
 export class AdminUserItemComponent implements OnInit {
   @Input() user: Usermeta = {accountnumber: -1, email: '', isadmin: false};
   @Output() deleted = new EventEmitter<number>();
+  deleting = false;
 
   constructor() { }
 
@@ -16,7 +17,16 @@ export class AdminUserItemComponent implements OnInit {
   }
 
   onDelete(): void {
+    this.deleting = true;
+  }
+
+  close(): void {
+    this.deleting = false;
+  }
+
+  closeConfirmation(): void {
     this.deleted.emit(this.user.accountnumber);
+    this.deleting = false;
   }
 
 }

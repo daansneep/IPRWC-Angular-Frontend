@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./userinfo.component.scss']
 })
 export class UserinfoComponent implements OnInit {
+  userLoggingOut = false;
+  userDataSaved = false;
   user: User = new User('', '', false, '', '', -1, '', '');
 
   constructor(private userService: UserService, private router: Router) { }
@@ -27,9 +29,23 @@ export class UserinfoComponent implements OnInit {
       city: form.value.city
     };
     this.userService.sendUserInfo(userInfo);
+    this.userDataSaved = true;
+  }
+
+  closeConfirmation(): void {
+    this.userDataSaved = false;
   }
 
   logOut(): void {
+    this.userLoggingOut = true;
+  }
+
+  closeAndGoBack(): void {
+    this.userLoggingOut = false;
+  }
+
+  closeAndLogout(): void {
+    this.userLoggingOut = false;
     this.userService.userSubject.next(undefined);
     this.router.navigate(['sign-in-or-up']);
   }

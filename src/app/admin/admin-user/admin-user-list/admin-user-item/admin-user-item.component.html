@@ -8,3 +8,13 @@
     <button class="remove" (click)="onDelete()">Verwijderen</button>
   </div>
 </div>
+
+<app-popup
+  *ngIf="deleting"
+  title="Gebruiker verwijderen"
+  buttonText="Doorgaan"
+  [buttons]="[true, false, true]"
+  (closed)="close()"
+  (savedAndWent)="closeConfirmation()">
+  <p>U staat op het punt om een gebruiker te verwijderen. Wilt u doorgaan?</p>
+</app-popup>

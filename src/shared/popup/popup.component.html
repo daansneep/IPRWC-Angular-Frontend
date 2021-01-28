@@ -5,9 +5,9 @@
 
       </ng-content>
     <div class="btn-holder">
-      <button *ngIf="isProduct" (click)="onClose()">Terug gaan</button>
-      <button *ngIf="isProduct" (click)="onSaveAndClose()">{{ backText }}</button>
-      <button (click)="onSaveAndGo()">{{ buttonText }}</button>
+      <button id="btn-1" *ngIf="buttons[0]" (click)="onClose()">Terug gaan</button>
+      <button id="btn-2" *ngIf="buttons[1]" (click)="onSaveAndClose()">{{ backText }}</button>
+      <button id="btn-3" *ngIf="buttons[2] "(click)="onSaveAndGo()">{{ buttonText }}</button>
     </div>
   </div>
 </section>

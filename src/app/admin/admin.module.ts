@@ -17,6 +17,7 @@ import { PropertyComponent } from './admin-product/admin-product-input/property/
 import {FormsModule} from '@angular/forms';
 import { AdminUserInputComponent } from './admin-user/admin-user-input/admin-user-input.component';
 import { AdminCategoryInputComponent } from './admin-category/admin-category-input/admin-category-input.component';
+import {SharedModule} from '../../shared/shared.module';
 
 const adminRoutes: Routes = [
   { path: 'admin', component: AdminComponent, children: [
@@ -53,10 +54,11 @@ const adminRoutes: Routes = [
     AdminCategoryComponent,
     AdminUserComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(adminRoutes),
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(adminRoutes),
+        FormsModule,
+        SharedModule
+    ]
 })
 export class AdminModule { }

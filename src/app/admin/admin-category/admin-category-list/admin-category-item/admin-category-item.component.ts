@@ -10,6 +10,7 @@ export class AdminCategoryItemComponent implements OnInit {
   @Input() category: Category = { categorynumber: -1, categoryname: '', previouscategorynumber: -1};
   @Output() edit = new EventEmitter<Category>();
   @Output() deleted = new EventEmitter<number>();
+  deleting = false;
 
   constructor() { }
 
@@ -21,7 +22,15 @@ export class AdminCategoryItemComponent implements OnInit {
   }
 
   onDelete(): void {
-    this.deleted.emit(this.category.categorynumber);
+    this.deleting = true;
   }
 
+  close(): void {
+    this.deleting = false;
+  }
+
+  closeConfirmation(): void {
+    this.deleting = false;
+    this.deleted.emit(this.category.categorynumber);
+  }
 }
