@@ -13,6 +13,7 @@ export class AdminCategoryInputComponent implements OnInit {
   categories: Category[] = [];
   supercategories: Category[] = [];
   editing = false;
+  noPreviousCategory = false;
 
   constructor(private productsService: ProductsService) { }
 
@@ -35,7 +36,8 @@ export class AdminCategoryInputComponent implements OnInit {
     if (form.value.previouscategory > 0) {
       this.category.previouscategorynumber = form.value.previouscategory;
     } else if (this.category.previouscategorynumber < 0) {
-      this.category.previouscategorynumber = 1;
+      this.noPreviousCategory = true;
+      return;
     }
 
     if (this.category.categorynumber > 0) {

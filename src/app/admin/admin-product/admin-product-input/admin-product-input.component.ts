@@ -28,9 +28,6 @@ export class AdminProductInputComponent implements OnInit {
         });
       });
     this.productsService.getCategories();
-    if (this.product.categorynumber > -1) {
-      console.log('get all properties :)');
-    }
   }
 
   resetInput(): void {

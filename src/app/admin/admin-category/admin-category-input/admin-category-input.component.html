@@ -2,20 +2,21 @@
   <div class="category">
     <div class="name">
       <label for="name">Naam</label>
-      <input type="text" id="name" name="name" ngModel required [(ngModel)]="category.categoryname">
+      <input class="required" type="text" id="name" name="name" ngModel required [(ngModel)]="category.categoryname">
     </div>
     <div class="previouscategory">
       <label for="previouscategory">Voorafgaande categorie</label>
-      <select id="previouscategory" name="previouscategory" required ngModel>
+      <select id="previouscategory" name="previouscategory" ngModel>
         <option *ngFor="let supercategory of supercategories" [value]="supercategory.categorynumber"
                 [selected]="supercategory.categorynumber === category.previouscategorynumber">
           {{ supercategory.categoryname }}
         </option>
       </select>
     </div>
+    <p *ngIf="noPreviousCategory" class="errorText">Er is geen vorige categorie geselecteerd!</p>
   </div>
   <div class="options">
-    <button class="save-or-create" type="submit">{{ editing ? 'Opslaan' : 'Aanmaken' }}</button>
+    <button class="save-or-create" type="submit" [disabled]="f.invalid">{{ editing ? 'Opslaan' : 'Aanmaken' }}</button>
     <button class="back" type="button" *ngIf="editing" (click)="resetInput()">Terug</button>
   </div>
 </form>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../../services/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import {UserService} from '../../services/user.service';
 export class AppComponent implements OnInit {
   title = 'IPRWC-Angular-Frontend';
 
-  constructor(private userService: UserService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    // this.userService.login('s1122353@student.hsleiden.nl', 'v%zjTW8D3h6cjKmz9s209#z&E');
+    this.router.navigate(['/']);
   }
 
 }

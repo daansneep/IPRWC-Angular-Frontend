@@ -1,5 +1,6 @@
 <div class="container">
-  <img src="../../../../assets/images/rtx3080.jpg" alt="">
+  <img *ngIf="product && product.imagepath.length > 1" src="{{product.imagepath}}" alt="Afbeelding van het product">
+  <img *ngIf="!product || product.imagepath.length < 1" src="../../../../assets/images/rtx3080.jpg" alt="Afbeelding van het product">
   <div class="content">
     <h3 *ngIf="product" (click)="onClicked()">{{ product.title }}</h3>
     <p *ngIf="product">{{ product.description }}</p>

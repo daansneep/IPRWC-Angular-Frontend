@@ -16,6 +16,10 @@
       width: 160px;
     }
 
+    .required.ng-invalid.ng-touched {
+      border: px solid red;
+    }
+
     textarea {
       width: 160px;
       padding: 5px;
@@ -43,5 +47,13 @@
   }
   .save-or-create {
     background-color: #005700;
+
+    &[disabled] {
+        opacity: 0.5;
+      }
   }
+}
+
+.errorText {
+  color: red;
 }

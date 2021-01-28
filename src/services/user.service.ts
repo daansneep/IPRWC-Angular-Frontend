@@ -54,7 +54,6 @@ export class UserService {
   }
 
   register(email: string, password: string): void {
-    console.log('registering');
     this.daoService.sendPostRequest('/auth/register', { email, password })
       .subscribe( () => {
           this.login(email, password);

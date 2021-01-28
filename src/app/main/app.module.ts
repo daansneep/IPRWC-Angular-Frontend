@@ -15,8 +15,10 @@ import {AdminModule} from '../admin/admin.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'profile', component: UserinfoComponent }
+  { path: 'profile', component: UserinfoComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

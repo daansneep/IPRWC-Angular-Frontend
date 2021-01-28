@@ -18,9 +18,10 @@ import {FormsModule} from '@angular/forms';
 import { AdminUserInputComponent } from './admin-user/admin-user-input/admin-user-input.component';
 import { AdminCategoryInputComponent } from './admin-category/admin-category-input/admin-category-input.component';
 import {SharedModule} from '../../shared/shared.module';
+import {AuthGuard} from '../auth/auth.guard';
 
 const adminRoutes: Routes = [
-  { path: 'admin', component: AdminComponent, children: [
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
       { path: '', component: AdminProductComponent },
       { path: 'product', component: AdminProductComponent },
       { path: 'category', component: AdminCategoryComponent },
