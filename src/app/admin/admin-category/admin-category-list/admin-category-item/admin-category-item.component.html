@@ -4,7 +4,7 @@
     <p class="isadmin" *ngIf="category && category.previouscategorynumber">Deze categorie is een subcategorie</p>
   </div>
   <div class="options" *ngIf="category.previouscategorynumber !== null">
-    <button class="edit" (click)="onEdit()">Edit</button>
     <button class="remove" (click)="onDelete()">Verwijderen</button>
+    <button class="edit" (click)="onEdit()">Edit</button>
   </div>
 </div>

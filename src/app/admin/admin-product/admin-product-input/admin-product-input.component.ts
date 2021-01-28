@@ -51,7 +51,7 @@ export class AdminProductInputComponent implements OnInit {
     this.product.stock = form.value.stock;
 
     this.product.showinwebshop = form.value.showinwebshop;
-    this.product.margin = (1 - (this.product.purchaseprice * 1.21 / this.product.saleprice)) * 100;
+    this.product.margin = Math.round((1 - (this.product.purchaseprice * 1.21 / this.product.saleprice)) * 100);
 
     if (this.product.productnumber > -1) {
       this.productsService.updateProduct(this.product);
